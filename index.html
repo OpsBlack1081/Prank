@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bantuan Pelajar Rahmah Madani</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://i.postimg.cc/J4fqgzT4/Bantuan-Sokongan-20250515-112819-0000.jpg');
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-shadow: 1px 1px 3px black;
+      position: relative;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    input {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      width: 80%;
+      max-width: 300px;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    #checkBtn {
+      margin-top: 15px;
+      padding: 12px 30px;
+      font-size: 16px;
+      border: none;
+      background-color: #28a745;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #status {
+      margin-top: 20px;
+      font-size: 18px;
+      display: none;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 40px;
+      text-align: center;
+      width: 100%;
+      font-size: 14px;
+    }
+
+    .footer a {
+      color: #ccc;
+      margin: 0 15px;
+      text-decoration: underline;
+    }
+
+    .copyright {
+      position: absolute;
+      bottom: 10px;
+      text-align: center;
+      width: 100%;
+      font-size: 12px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Bantuan Pelajar Rahmah Madani</h1>
+    <p>Sila masukkan maklumat anda untuk semakan kelayakan:</p>
+
+    <input type="text" placeholder="NAMA PENUH">
+    <input type="text" placeholder="UNIVERSITI / KOLEJ">
+    <input type="text" placeholder="NOMBOR MATRIKS PELAJAR">
+    
+    <button id="checkBtn" onclick="playPrank()">Semak Kelayakan</button>
+    
+    <div id="status">Sila tunggu... sedang menyemak kelayakan anda.</div>
+  </div>
+
+  <div class="footer">
+    <a href="#">Bantuan & Sokongan</a>
+    <a href="#">Senarai Pusat Bantuan</a>
+    <a href="mailto:support@moe.gov.my">Emel</a>
+  </div>
+
+  <div class="copyright">
+    Copyright © 2025 All Rights Reserved
+  </div>
+
+  <audio id="funnySound">
+    <source src="https://media.vocaroo.com/mp3/1nIHJqUuTep0" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function playPrank() {
+      document.getElementById('checkBtn').disabled = true;
+      document.getElementById('status').style.display = 'block';
+
+      setTimeout(() => {
+        document.getElementById('funnySound').play();
+        document.getElementById('status').innerText = "Tahniah! Anda tidak layak!";
+      }, 2500);
+    }
+  </script>
+
+</body>
+</html>
